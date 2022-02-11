@@ -1,0 +1,32 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-Hibernate/Hibernate Mapping DTDEN"
+	"http:www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+	
+	<hibernate-mapping>
+	<class name="com.mondee.Payment" table="payment">
+	<id name="paymentId" column="pid"></id>
+	
+	<property name="amount" column="amount"></property>
+	
+	<joined-subclass name="com.mondee.CreditCard" table="creditcard">
+	<key column="pcid"></key>
+	<property name="creditcardType" column="ccType"></property>
+	</joined-subclasss>
+	
+	
+	<joined-subclass name="com.mondee.Cheque" table="cheque" >
+	<key column="pcqid"></key>
+	<property name="chequeType" column="cqType"></property>
+	</joined-subclass>
+	
+	</class>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</hibernate-mapping>
